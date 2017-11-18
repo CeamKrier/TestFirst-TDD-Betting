@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class ConsoleView {
 	
+	private Scanner sc;
 	public ConsoleView() {
+		sc = new Scanner(System.in);
 	}
 	
 	final String WELCOME = "< Welcome to casino >\n\n"
@@ -21,13 +23,13 @@ public class ConsoleView {
 	}
 	
 	public String askUserBetAmount() {
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.print(BET);
 		return sc.nextLine();
 	}
 	
 	public String askUserWhichPlayModeIsWanted() {
-		Scanner sc = new Scanner(System.in);
+
 		System.out.print("Select play mode");
 		return sc.nextLine();
 	}
