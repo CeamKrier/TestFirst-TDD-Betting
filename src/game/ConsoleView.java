@@ -17,9 +17,10 @@ public class ConsoleView {
 	}
 	
 	public String askUserBetAmount() {
+		Scanner sc = new Scanner(System.in);
 		PrintStream out = System.out;
 		out.print(BET);
-		return null;
+		return sc.nextLine();
 	}
 
 }
