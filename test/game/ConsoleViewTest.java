@@ -1,9 +1,12 @@
 package game;
 
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.CoreMatchers.*;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
+import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +14,6 @@ class ConsoleViewTest {
 
 	private ByteArrayOutputStream outContent;
 	private ConsoleView sut;
-
 	@BeforeEach
 	void setUp() throws Exception {
 		sut = new ConsoleView();
@@ -53,11 +55,18 @@ class ConsoleViewTest {
 	@Test
 	void shouldAskUserToTargetUpperOrLowerAndBeSureThereIsARespond() {
 	    String respond = sut.askUserToTargetUpperOrLower();
-	    String expectedOutput  = "Upper or lower ?";
+	    String expectedOutput  = sut.UPPER_LOWER;
 	    assertEquals(expectedOutput, outContent.toString());
 	    assertNotNull(respond);
 	}
 	
+	@Test
+	void shouldShowPlayerBalance() {
+		Player p = mock(Player.class);
+	    boolean expectedOutput  = true;
+	    assertEquals(expectedOutput, outContent.toString().contains("balance"));
+	    verify(p).getScore();
+	}
 	
 
 }

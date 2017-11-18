@@ -19,6 +19,9 @@ public class ConsoleView {
 			+ "[2] -> Automated mode : Automated bets being done by computer. You can choose how many automated bet will be performed";
 	final String BET = "\nPlease enter the amount you want to bet (number): ";
 	final String TARGET = "\nPlease enter ratio to multiply your bet (a number between 2 to 99): ";
+	final String UPPER_LOWER = "\nDo you want to bet for upper or lower section?\n"
+			+ "[1] -> Upper section (bet for rolls higher then 50.0)\n"
+			+ "[2] -> Lower section (bet for rolls lower then 50.0)";
 	
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
@@ -40,8 +43,12 @@ public class ConsoleView {
 	}
 	
 	public String askUserToTargetUpperOrLower() {
-		System.out.print("Upper or lower ?");
+		System.out.print(UPPER_LOWER);
 		return sc.nextLine();
+	}
+	
+	public void showPlayerBalance() {
+		
 	}
 
 }
