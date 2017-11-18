@@ -1,10 +1,7 @@
 package game;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
 import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
 import java.io.PrintStream;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -22,7 +19,7 @@ class ConsoleViewTest {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	    System.setOut(new PrintStream(outContent));
 	    sut.showWelcomeMessage();
-	    String expectedOutput  = "Welcome";
+	    String expectedOutput  = sut.WELCOME;
 	    assertEquals(expectedOutput, outContent.toString());
 	}
 
