@@ -26,6 +26,7 @@ public class ConsoleView {
 	final String WON = "\n\nCongragulations! Yow won.";
 	final String LOST = "\n\nUnfortunately you have lost your bet this time..";
 	final String CLASSIC = "\n\n< Classic Betting Mode >";
+	final String AUTOMATED = "\n< Automated Betting Mode >";
 	
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
@@ -68,7 +69,7 @@ public class ConsoleView {
 	}
 	
 	public void showAutomatedModeStartMessage() {
-		System.out.print("< Automated mode >");
+		System.out.print(AUTOMATED);
 		
 	}
 

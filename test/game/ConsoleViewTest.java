@@ -95,7 +95,7 @@ class ConsoleViewTest {
 	@Test
 	void shouldShowAutomatedModeStartMessage() {
 		sut.showAutomatedModeStartMessage();
-	    String expectedOutput  = "< Automated mode >";
+	    String expectedOutput  = sut.AUTOMATED;
 	    assertEquals(expectedOutput, outContent.toString());
 	}
 
