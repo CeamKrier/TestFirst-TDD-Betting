@@ -58,7 +58,7 @@ public class ConsoleView {
 	}
 	
 	public void lostMessage() {
-		
+		System.out.print("You lost");
 	}
 
 }
