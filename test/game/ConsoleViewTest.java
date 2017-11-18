@@ -83,5 +83,12 @@ class ConsoleViewTest {
 	    String expectedOutput  = sut.LOST;
 	    assertEquals(expectedOutput, outContent.toString());
 	}
+	
+	@Test
+	void shouldShowClassicModeStartMessage() {
+		sut.showClassicModeStartMessage();
+	    String expectedOutput  = "< Classic mode >";
+	    assertEquals(expectedOutput, outContent.toString());
+	}
 
 }
