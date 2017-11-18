@@ -63,7 +63,7 @@ public class ConsoleView {
 	}
 	
 	public void showClassicModeStartMessage() {
-		
+		System.out.print("< Classic mode >");
 	}
 
 }
