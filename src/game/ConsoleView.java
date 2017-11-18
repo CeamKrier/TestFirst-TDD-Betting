@@ -1,13 +1,10 @@
 package game;
 
-import java.io.PrintStream;
 import java.util.Scanner;
 
 public class ConsoleView {
 	
-	private PrintStream out;
 	public ConsoleView() {
-		this.out = System.out;
 	}
 	
 	final String WELCOME = "< Welcome to casino >\n\n"
@@ -17,13 +14,17 @@ public class ConsoleView {
 			+ "Good luck and have fun!\n";
 	final String BET = "\nPlease enter the amount you want to bet (number): ";
 	public void showWelcomeMessage() {
-		out.print(WELCOME);
+		System.out.print(WELCOME);
 	}
 	
 	public String askUserBetAmount() {
 		Scanner sc = new Scanner(System.in);
-		out.print(BET);
+		System.out.print(BET);
 		return sc.nextLine();
+	}
+	
+	public String askUserWhichPlayModeIsWanted() {
+		return null;
 	}
 
 }
