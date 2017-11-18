@@ -27,10 +27,11 @@ class ConsoleViewTest {
 	}
 	
 	@Test
-	void shouldAskBetAmountToPlayer() {
-	    sut.askUserBetAmount();
+	void shouldAskBetAmountToPlayerAndBeSureThereIsARespond() {
+	    String respond = sut.askUserBetAmount();
 	    String expectedOutput  = sut.BET;
 	    assertEquals(expectedOutput, outContent.toString());
+	    assertNotNull(respond);
 	}
 
 }

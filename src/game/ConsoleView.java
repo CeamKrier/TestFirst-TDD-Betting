@@ -1,6 +1,7 @@
 package game;
 
 import java.io.PrintStream;
+import java.util.Scanner;
 
 public class ConsoleView {
 	
@@ -18,7 +19,7 @@ public class ConsoleView {
 	public String askUserBetAmount() {
 		PrintStream out = System.out;
 		out.print(BET);
-		return "";
+		return null;
 	}
 
 }
