@@ -14,10 +14,12 @@ public class ConsoleView {
 			+ "All you need to do is start betting with our generous gift of 10 coins.\n"
 			+ "Don't forget to follow the given instructions to understand how the game works!\n"
 			+ "Good luck and have fun!\n";
-	final String BET = "\nPlease enter the amount you want to bet (number): ";
 	final String PLAY_MODE = "Please select which play mode you want: \n"
 			+ "[1] -> Classic mode : One bet each time\n"
 			+ "[2] -> Automated mode : Automated bets being done by computer. You can choose how many automated bet will be performed";
+	final String BET = "\nPlease enter the amount you want to bet (number): ";
+	final String TARGET = "\nPlease enter ratio to multiply your bet (a number between 2 to 99): ";
+	
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
 	}
@@ -33,7 +35,8 @@ public class ConsoleView {
 	}
 	
 	public String askUserTheBetTarget () {
-		return null;
+		System.out.print(TARGET);
+		return sc.nextLine();
 	}
 
 }

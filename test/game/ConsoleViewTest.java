@@ -45,7 +45,7 @@ class ConsoleViewTest {
 	@Test
 	void shouldAskUserTheBetTargetAndBeSureThereIsARespond() {
 	    String respond = sut.askUserTheBetTarget();
-	    String expectedOutput  = "Please choose bet target";
+	    String expectedOutput  = sut.TARGET;
 	    assertEquals(expectedOutput, outContent.toString());
 	    assertNotNull(respond);
 	}
