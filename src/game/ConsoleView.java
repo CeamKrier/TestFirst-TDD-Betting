@@ -23,8 +23,9 @@ public class ConsoleView {
 	final String UPPER_LOWER = "\n\nDo you want to bet for upper or lower section?\n"
 			+ "[1] -> Upper section (bet for rolls higher then 50.0)\n"
 			+ "[2] -> Lower section (bet for rolls lower then 50.0)";
-	final String WON = "\nCongragulations! Yow won.";
-	final String LOST = "\nUnfortunately you have lost your bet this time..";
+	final String WON = "\n\nCongragulations! Yow won.";
+	final String LOST = "\n\nUnfortunately you have lost your bet this time..";
+	final String CLASSIC = "\n\n< Classic Betting Mode >";
 	
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
@@ -63,7 +64,7 @@ public class ConsoleView {
 	}
 	
 	public void showClassicModeStartMessage() {
-		System.out.print("< Classic mode >");
+		System.out.print(CLASSIC);
 	}
 
 }
