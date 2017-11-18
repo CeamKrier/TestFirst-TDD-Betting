@@ -30,7 +30,7 @@ public class ConsoleView {
 	}
 	
 	public String askUserWhichPlayModeIsWanted() {
-		System.out.print("Select play mode");
+		System.out.print(PLAY_MODE);
 		return sc.nextLine();
 	}
 	

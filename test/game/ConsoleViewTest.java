@@ -37,7 +37,7 @@ class ConsoleViewTest {
 	@Test
 	void shouldAskPlayModeToUserAndBeSureThereIsARespond() {
 	    String respond = sut.askUserWhichPlayModeIsWanted();
-	    String expectedOutput  = "Select play mode";
+	    String expectedOutput  = sut.PLAY_MODE;
 	    assertEquals(expectedOutput, outContent.toString());
 	    assertNotNull(respond);
 	}
