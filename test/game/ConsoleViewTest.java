@@ -9,15 +9,18 @@ import org.junit.jupiter.api.Test;
 
 class ConsoleViewTest {
 
+	private ByteArrayOutputStream outContent;
+	private ConsoleView sut;
+
 	@BeforeEach
 	void setUp() throws Exception {
+		sut = new ConsoleView();
+		outContent = new ByteArrayOutputStream();
+	    System.setOut(new PrintStream(outContent));
 	}
 	
 	@Test
 	void shouldShowWelcomeMessage() {
-		ConsoleView sut = new ConsoleView();
-		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-	    System.setOut(new PrintStream(outContent));
 	    sut.showWelcomeMessage();
 	    String expectedOutput  = sut.WELCOME;
 	    assertEquals(expectedOutput, outContent.toString());
@@ -25,11 +28,8 @@ class ConsoleViewTest {
 	
 	@Test
 	void shouldAskBetAmountToPlayer() {
-		ConsoleView sut = new ConsoleView();
-		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-	    System.setOut(new PrintStream(outContent));
 	    sut.askUserBetAmount();
-	    String expectedOutput  = "Enter your bet";
+	    String expectedOutput  = sut.BET;
 	    assertEquals(expectedOutput, outContent.toString());
 	}
 
