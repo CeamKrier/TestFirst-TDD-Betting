@@ -53,7 +53,7 @@ public class ConsoleView {
 	}
 	
 	public void wonMessage() {
-	
+		System.out.print("You won");
 	}
 
 }
