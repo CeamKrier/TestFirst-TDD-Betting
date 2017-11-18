@@ -51,5 +51,9 @@ public class ConsoleView {
 	public void showPlayerBalance() {
 		System.out.print("Your current balance is " + engine.player.getScore());
 	}
+	
+	public void wonMessage() {
+	
+	}
 
 }
