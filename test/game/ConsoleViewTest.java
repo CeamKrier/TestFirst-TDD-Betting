@@ -49,5 +49,15 @@ class ConsoleViewTest {
 	    assertEquals(expectedOutput, outContent.toString());
 	    assertNotNull(respond);
 	}
+	
+	@Test
+	void shouldAskUserToTargetUpperOrLowerAndBeSureThereIsARespond() {
+	    String respond = sut.askUserToTargetUpperOrLower();
+	    String expectedOutput  = "Upper or lower ?";
+	    assertEquals(expectedOutput, outContent.toString());
+	    assertNotNull(respond);
+	}
+	
+	
 
 }

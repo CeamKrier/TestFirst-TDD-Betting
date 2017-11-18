@@ -38,5 +38,9 @@ public class ConsoleView {
 		System.out.print(TARGET);
 		return sc.nextLine();
 	}
+	
+	public String askUserToTargetUpperOrLower() {
+		return null;
+	}
 
 }
