@@ -73,7 +73,7 @@ class ConsoleViewTest {
 	@Test
 	void shouldShowPlayerWonMessage() {
 		sut.wonMessage();
-	    String expectedOutput  = "You won";
+	    String expectedOutput  = sut.WON;
 	    assertEquals(expectedOutput, outContent.toString());
 	}
 	

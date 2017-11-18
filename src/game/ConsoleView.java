@@ -23,6 +23,7 @@ public class ConsoleView {
 	final String UPPER_LOWER = "\nDo you want to bet for upper or lower section?\n"
 			+ "[1] -> Upper section (bet for rolls higher then 50.0)\n"
 			+ "[2] -> Lower section (bet for rolls lower then 50.0)";
+	final String WON = "\nCongragulations! Yow won.";
 	
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
@@ -49,11 +50,11 @@ public class ConsoleView {
 	}
 	
 	public void showPlayerBalance() {
-		System.out.print("Your current balance is " + engine.player.getScore());
+		System.out.print("\n\nYour current balance is " + engine.player.getScore());
 	}
 	
 	public void wonMessage() {
-		System.out.print("You won");
+		System.out.print(WON);
 	}
 
 }
