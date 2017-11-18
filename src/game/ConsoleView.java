@@ -40,7 +40,8 @@ public class ConsoleView {
 	}
 	
 	public String askUserToTargetUpperOrLower() {
-		return null;
+		System.out.print("Upper or lower ?");
+		return sc.nextLine();
 	}
 
 }
