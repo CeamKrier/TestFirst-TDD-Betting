@@ -102,7 +102,7 @@ class ConsoleViewTest {
 	@Test
 	void shouldAskUserHowManyTimesToAutomateBetting() {
 		String respond = sut.askUserHowManyTimesToAutomateBetting();
-	    String expectedOutput  = "How many times you want to bet?";
+	    String expectedOutput  = sut.AUTO_BET_NUMBER;
 	    assertEquals(expectedOutput, outContent.toString());
 	    assertNotNull(respond);
 	}

@@ -26,7 +26,8 @@ public class ConsoleView {
 	final String WON = "\n\nCongragulations! Yow won.";
 	final String LOST = "\n\nUnfortunately you have lost your bet this time..";
 	final String CLASSIC = "\n\n< Classic Betting Mode >";
-	final String AUTOMATED = "\n< Automated Betting Mode >";
+	final String AUTOMATED = "\n\n< Automated Betting Mode >";
+	final String AUTO_BET_NUMBER = "\n\nPlease enter how many times you want to automate betting: ";
 	
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
@@ -74,7 +75,7 @@ public class ConsoleView {
 	}
 	
 	public String askUserHowManyTimesToAutomateBetting() {
-		System.out.print("How many times you want to bet?");
+		System.out.print(AUTO_BET_NUMBER);
 		return sc.nextLine();
 		
 	}
