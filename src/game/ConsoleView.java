@@ -24,6 +24,7 @@ public class ConsoleView {
 			+ "[1] -> Upper section (bet for rolls higher then 50.0)\n"
 			+ "[2] -> Lower section (bet for rolls lower then 50.0)";
 	final String WON = "\nCongragulations! Yow won.";
+	final String LOST = "\nUnfortunately you have lost your bet this time..";
 	
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
@@ -58,7 +59,7 @@ public class ConsoleView {
 	}
 	
 	public void lostMessage() {
-		System.out.print("You lost");
+		System.out.print(LOST);
 	}
 
 }

@@ -80,7 +80,7 @@ class ConsoleViewTest {
 	@Test
 	void shouldShowPlayerLostMessage() {
 		sut.lostMessage();
-	    String expectedOutput  = "You lost";
+	    String expectedOutput  = sut.LOST;
 	    assertEquals(expectedOutput, outContent.toString());
 	}
 
