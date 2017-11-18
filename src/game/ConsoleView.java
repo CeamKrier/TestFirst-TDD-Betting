@@ -23,15 +23,17 @@ public class ConsoleView {
 	}
 	
 	public String askUserBetAmount() {
-		
 		System.out.print(BET);
 		return sc.nextLine();
 	}
 	
 	public String askUserWhichPlayModeIsWanted() {
-
 		System.out.print("Select play mode");
 		return sc.nextLine();
+	}
+	
+	public String askUserTheBetTarget () {
+		return null;
 	}
 
 }

@@ -35,9 +35,17 @@ class ConsoleViewTest {
 	}
 	
 	@Test
-	void shouldAskPlayModeToUser() {
+	void shouldAskPlayModeToUserAndBeSureThereIsARespond() {
 	    String respond = sut.askUserWhichPlayModeIsWanted();
 	    String expectedOutput  = "Select play mode";
+	    assertEquals(expectedOutput, outContent.toString());
+	    assertNotNull(respond);
+	}
+	
+	@Test
+	void shouldAskUserTheBetTargetAndBeSureThereIsARespond() {
+	    String respond = sut.askUserTheBetTarget();
+	    String expectedOutput  = "Please choose bet target";
 	    assertEquals(expectedOutput, outContent.toString());
 	    assertNotNull(respond);
 	}
