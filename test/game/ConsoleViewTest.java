@@ -1,5 +1,6 @@
 package game;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -16,7 +17,7 @@ class ConsoleViewTest {
 	private ConsoleView sut;
 	@BeforeEach
 	void setUp() throws Exception {
-		sut = new ConsoleView();
+		sut = new ConsoleView(new GameEngine());
 		outContent = new ByteArrayOutputStream();
 	    System.setOut(new PrintStream(outContent));
 	}
@@ -62,10 +63,11 @@ class ConsoleViewTest {
 	
 	@Test
 	void shouldShowPlayerBalance() {
-		Player p = mock(Player.class);
+		sut.showPlayerBalance();
 	    boolean expectedOutput  = true;
 	    assertEquals(expectedOutput, outContent.toString().contains("balance"));
-	    verify(p).getScore();
+	    assertFalse(outContent.toString().contains("null"));
+	    
 	}
 	
 

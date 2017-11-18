@@ -2,8 +2,8 @@ package game;
 
 public class Player {
 
-	public void getScore() {
-		// TODO Auto-generated method stub
+	public int getScore() {
+		return 0;
 		
 	}
 

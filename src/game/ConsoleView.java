@@ -3,10 +3,11 @@ package game;
 import java.util.Scanner;
 
 public class ConsoleView {
-	
 	private Scanner sc;
-	public ConsoleView() {
+	private GameEngine engine;
+	public ConsoleView(GameEngine engine) {
 		sc = new Scanner(System.in);
+		this.engine = engine;
 	}
 	
 	final String WELCOME = "< Welcome to casino >\n\n"
@@ -48,7 +49,7 @@ public class ConsoleView {
 	}
 	
 	public void showPlayerBalance() {
-		
+		System.out.print("Your current balance is " + engine.player.getScore());
 	}
 
 }
