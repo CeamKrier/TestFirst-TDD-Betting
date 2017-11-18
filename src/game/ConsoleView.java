@@ -66,5 +66,10 @@ public class ConsoleView {
 	public void showClassicModeStartMessage() {
 		System.out.print(CLASSIC);
 	}
+	
+	public void showAutomatedModeStartMessage() {
+		
+		
+	}
 
 }
