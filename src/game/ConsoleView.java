@@ -12,5 +12,9 @@ public class ConsoleView {
 		PrintStream out = System.out;
 		out.print(WELCOME);
 	}
+	
+	public String askUserBetAmount() {
+		return "";
+	}
 
 }

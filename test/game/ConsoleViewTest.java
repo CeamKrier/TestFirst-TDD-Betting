@@ -22,5 +22,15 @@ class ConsoleViewTest {
 	    String expectedOutput  = sut.WELCOME;
 	    assertEquals(expectedOutput, outContent.toString());
 	}
+	
+	@Test
+	void shouldAskBetAmountToPlayer() {
+		ConsoleView sut = new ConsoleView();
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	    System.setOut(new PrintStream(outContent));
+	    sut.askUserBetAmount();
+	    String expectedOutput  = "Enter your bet";
+	    assertEquals(expectedOutput, outContent.toString());
+	}
 
 }
