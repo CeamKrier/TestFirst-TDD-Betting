@@ -68,7 +68,7 @@ public class ConsoleView {
 	}
 	
 	public void showAutomatedModeStartMessage() {
-		
+		System.out.print("< Automated mode >");
 		
 	}
 
