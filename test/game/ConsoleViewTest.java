@@ -98,5 +98,14 @@ class ConsoleViewTest {
 	    String expectedOutput  = sut.AUTOMATED;
 	    assertEquals(expectedOutput, outContent.toString());
 	}
+	
+	@Test
+	void shouldAskUserHowManyTimesToAutomateBetting() {
+		String respond = sut.askUserHowManyTimesToAutomateBetting();
+	    String expectedOutput  = "How many times you want to bet?";
+	    assertEquals(expectedOutput, outContent.toString());
+	    assertNotNull(respond);
+	}
+	
 
 }

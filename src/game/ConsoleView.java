@@ -72,5 +72,10 @@ public class ConsoleView {
 		System.out.print(AUTOMATED);
 		
 	}
+	
+	public String askUserHowManyTimesToAutomateBetting() {
+		return null;
+		
+	}
 
 }
