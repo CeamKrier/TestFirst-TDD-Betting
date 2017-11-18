@@ -13,6 +13,9 @@ public class ConsoleView {
 			+ "Don't forget to follow the given instructions to understand how the game works!\n"
 			+ "Good luck and have fun!\n";
 	final String BET = "\nPlease enter the amount you want to bet (number): ";
+	final String PLAY_MODE = "Please select which play mode you want: \n"
+			+ "[1] -> Classic mode : One bet each time\n"
+			+ "[2] -> Automated mode : Automated bets being done by computer. You can choose how many automated bet will be performed";
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
 	}
@@ -24,7 +27,9 @@ public class ConsoleView {
 	}
 	
 	public String askUserWhichPlayModeIsWanted() {
-		return null;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Select play mode");
+		return sc.nextLine();
 	}
 
 }
