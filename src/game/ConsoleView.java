@@ -74,7 +74,8 @@ public class ConsoleView {
 	}
 	
 	public String askUserHowManyTimesToAutomateBetting() {
-		return null;
+		System.out.print("How many times you want to bet?");
+		return sc.nextLine();
 		
 	}
 
