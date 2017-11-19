@@ -72,7 +72,7 @@ class GameEngineTest {
 	void shoulPlayWithClassicMode() {
 		when(pl.getScore()).thenReturn(10);
 		returnForClassicModeValidationAndPlayingWithClassicMode();
-		sut.playWithClassicMode();
+		sut.playWithClassicMode("4", "4");
 		verify(cv).showClassicModeStartMessage();
 		verifyForClassicModeValidationAndPlayingWithClassicMode();
 	}
@@ -80,9 +80,10 @@ class GameEngineTest {
 	
 	@Test
 	void shoulShowDoUserWin() {
-		sut.doUserWin(false);
+		when(pl.getScore()).thenReturn(10);
+		sut.doUserWin(false, "5", "5");
 		verify(cv).lostMessage();
-		sut.doUserWin(true);
+		sut.doUserWin(true, "5", "5");
 		verify(cv).wonMessage();
 		
 	}

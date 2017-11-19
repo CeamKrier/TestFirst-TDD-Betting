@@ -45,18 +45,30 @@ public class GameEngine {
 		return controller.playerWonOrLost(winner, targetResult);
 	}
 	
-	public void playWithClassicMode() {
+	public void playWithClassicMode(String betMultiply, String bet) {
 		view.showClassicModeStartMessage();
 		if (player.getScore() > 0) {
 			boolean wonOrLost = callAndValidateForClassic();
-			doUserWin(wonOrLost);
+			doUserWin(wonOrLost, betMultiply, bet);
 			
 		}
 		
 	}
 
-	public void doUserWin(boolean wonOrLost) {
-		// TODO Auto-generated method stub
+	public void doUserWin(boolean wonOrLost, String betMultiply, String bet) {
+		if (wonOrLost) {
+			int newScore = player.getScore() + Integer.parseInt(betMultiply) * Integer.parseInt(bet);
+			player.setScore(newScore);
+			view.wonMessage();
+			view.rolledNumber(this.winner, this.targetResult, this.targetSection);
+			view.showPlayerBalance();
+		} else {
+			int newScore = player.getScore() - Integer.parseInt(bet);
+			player.setScore(newScore);
+			view.lostMessage();
+			view.rolledNumber(this.winner, this.targetResult, this.targetSection);
+			view.showPlayerBalance();
+		}
 		
 	}
 	

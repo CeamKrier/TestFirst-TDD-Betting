@@ -7,4 +7,9 @@ public class Player {
 		
 	}
 
+	public void setScore(int newScore) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
