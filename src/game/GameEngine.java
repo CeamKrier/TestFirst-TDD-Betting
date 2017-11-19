@@ -26,5 +26,9 @@ public class GameEngine {
 		controller.defineGameMode(Integer.parseInt(gameMode));
 	}
 	
+	public void askGameInitiatingQuestions() {
+		
+	}
+	
 
 }

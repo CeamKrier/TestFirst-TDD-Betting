@@ -22,5 +22,17 @@ class GameEngineTest {
 		verify(cv).askUserWhichPlayModeIsWanted();
 		verify(gc).defineGameMode(1);
 	}
+	
+	@Test
+	void shoulAskGameInitiatingQuestions() {
+		ConsoleView cv = mock(ConsoleView.class);
+		GameController gc = mock(GameController.class);
+		GameEngine sut = new GameEngine(cv, gc);
+		
+		verify(gc).validateBetInput();
+		verify(gc).validateBetTarget();
+		verify(gc).validateBetTargetSection();
+		verify(gc).playerTargetRange();
+	}
 
 }
