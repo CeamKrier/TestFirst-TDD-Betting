@@ -45,7 +45,7 @@ class GameEngineTest {
 		when(gc.validateBetTargetSection()).thenReturn("1");
 		when(gc.generateWinningNumber()).thenReturn(93.33);
 		when(gc.playerTargetRange("5", "1")).thenReturn(80.0);
-		sut.askGameInitiatingQuestions();
+		sut.callAndValidateForClassic();
 		verify(gc).validateBetInput();
 		verify(gc).validateBetTarget();
 		verify(gc).validateBetTargetSection();

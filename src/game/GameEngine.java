@@ -10,6 +10,7 @@ public class GameEngine {
 	private String betMultiply;
 	private String targetSection;
 	private double targetResult;
+	private double winner;
 	
 	public GameEngine(ConsoleView cv, GameController gc) {
 		player = new Player();
@@ -39,7 +40,9 @@ public class GameEngine {
 	}
 	
 	public boolean callAndValidateForClassic() {
-		return false;
+		askGameInitiatingQuestions();
+		this.winner = controller.generateWinningNumber();
+		return controller.playerWonOrLost(winner, targetResult);
 	}
 	
 
