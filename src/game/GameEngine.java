@@ -80,8 +80,9 @@ public class GameEngine {
 		
 	}
 	
-	public boolean callLoopForAutomatedBet() {
-		return false;
+	public boolean callLoopForAutomatedBet(double targetResult) {
+		this.winner = controller.generateWinningNumber();
+		return controller.playerWonOrLost(winner, targetResult);
 	}
 	
 

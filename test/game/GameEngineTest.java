@@ -98,7 +98,8 @@ class GameEngineTest {
 	
 	@Test
 	void shoulCallLoopForAutomatedBet() {
-		sut.callLoopForAutomatedBet();
+		when(gc.generateWinningNumber()).thenReturn(22.22);
+		sut.callLoopForAutomatedBet(55.55);
 		verify(gc).generateWinningNumber();
 		verify(gc).playerWonOrLost(22.22, 55.55);
 		
