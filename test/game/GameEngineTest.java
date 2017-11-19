@@ -28,28 +28,32 @@ class GameEngineTest {
 		verify(gc).defineGameMode(1);
 	}
 	
-	@Test
-	void shoulAskGameInitiatingQuestions() {
-		when(gc.validateBetTarget()).thenReturn("5");
-		when(gc.validateBetTargetSection()).thenReturn("1");
-		sut.askGameInitiatingQuestions();
+	void verifyInitialQuestionsToPlayer() {
 		verify(gc).validateBetInput();
 		verify(gc).validateBetTarget();
 		verify(gc).validateBetTargetSection();
 		verify(gc).playerTargetRange("5", "1");
 	}
 	
-	@Test
-	void shoulCallAndValidateForClassic() {
+	void returnResultsForValidatedQuestions() {
 		when(gc.validateBetTarget()).thenReturn("5");
 		when(gc.validateBetTargetSection()).thenReturn("1");
+	}
+	
+	@Test
+	void shoulAskGameInitiatingQuestions() {
+		returnResultsForValidatedQuestions();
+		sut.askGameInitiatingQuestions();
+		verifyInitialQuestionsToPlayer();
+	}
+	
+	@Test
+	void shoulCallAndValidateForClassic() {
+		returnResultsForValidatedQuestions();
 		when(gc.generateWinningNumber()).thenReturn(93.33);
 		when(gc.playerTargetRange("5", "1")).thenReturn(80.0);
 		sut.callAndValidateForClassic();
-		verify(gc).validateBetInput();
-		verify(gc).validateBetTarget();
-		verify(gc).validateBetTargetSection();
-		verify(gc).playerTargetRange("5", "1");
+		verifyInitialQuestionsToPlayer();
 		verify(gc).generateWinningNumber();
 		verify(gc).playerWonOrLost(93.33, 80.0);
 	}
