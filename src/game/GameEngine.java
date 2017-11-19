@@ -6,6 +6,10 @@ public class GameEngine {
 	private GameController controller;
 	private ConsoleView view;
 	private String gameMode;
+	private String bet;
+	private String betMultiply;
+	private String targetSection;
+	private double targetResult;
 	
 	public GameEngine(ConsoleView cv, GameController gc) {
 		player = new Player();
@@ -27,6 +31,10 @@ public class GameEngine {
 	}
 	
 	public void askGameInitiatingQuestions() {
+		this.bet = controller.validateBetInput();
+		this.betMultiply = controller.validateBetTarget();
+		this.targetSection = controller.validateBetTargetSection();
+		this.targetResult = controller.playerTargetRange(betMultiply, targetSection);
 		
 	}
 	

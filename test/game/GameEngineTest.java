@@ -28,11 +28,13 @@ class GameEngineTest {
 		ConsoleView cv = mock(ConsoleView.class);
 		GameController gc = mock(GameController.class);
 		GameEngine sut = new GameEngine(cv, gc);
-		
+		when(gc.validateBetTarget()).thenReturn("5");
+		when(gc.validateBetTargetSection()).thenReturn("1");
+		sut.askGameInitiatingQuestions();
 		verify(gc).validateBetInput();
 		verify(gc).validateBetTarget();
 		verify(gc).validateBetTargetSection();
-		verify(gc).playerTargetRange();
+		verify(gc).playerTargetRange("5", "1");
 	}
 
 }

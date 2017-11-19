@@ -7,23 +7,27 @@ public class GameController {
 		
 	}
 
-	public void validateBetInput() {
+	public String validateBetInput() {
 		// TODO Auto-generated method stub
+		return "";
 		
 	}
 
-	public void validateBetTarget() {
+	public String validateBetTarget() {
 		// TODO Auto-generated method stub
+		return "";
 		
 	}
 
-	public void validateBetTargetSection() {
+	public String validateBetTargetSection() {
 		// TODO Auto-generated method stub
+		return "";
 		
 	}
 
-	public void playerTargetRange() {
+	public double playerTargetRange(String multiply, String upperOrLower) {
 		// TODO Auto-generated method stub
+		return 0.0;
 		
 	}
 
