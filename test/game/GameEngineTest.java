@@ -108,8 +108,9 @@ class GameEngineTest {
 	@Test
 	void shoulPlayWithAutomatedMode() {
 		when(pl.getScore()).thenReturn(10);
+		when(gc.validateAutomatedBetNumber()).thenReturn("1");
 		returnForValidationAndPlayingWithModes();
-		sut.playWithAutomatedMode("4", "4");
+		sut.playWithAutomatedMode("4", "4", 80.0);
 		verify(cv).showAutomatedModeStartMessage();
 		verifyForModeValidationAndPlayingWithModes();
 	}

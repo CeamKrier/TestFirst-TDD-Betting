@@ -85,8 +85,15 @@ public class GameEngine {
 		return controller.playerWonOrLost(winner, targetResult);
 	}
 	
-	public void playWithAutomatedMode(String betMultiply, String bet) {
-		
+	public void playWithAutomatedMode(String betMultiply, String bet, double targetResult) {
+		view.showAutomatedModeStartMessage();
+		callAndValidateForAutomated();
+		while (player.getScore() > 0 && parsedBetNum > 0) {
+			parsedBetNum -= 1;
+			boolean wonOrLost = callLoopForAutomatedBet(targetResult);
+			doUserWin(wonOrLost, betMultiply, bet);
+			
+		}
 		
 	}
 	
