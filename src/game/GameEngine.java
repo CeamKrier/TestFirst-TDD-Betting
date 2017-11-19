@@ -46,7 +46,17 @@ public class GameEngine {
 	}
 	
 	public void playWithClassicMode() {
+		view.showClassicModeStartMessage();
+		if (player.getScore() > 0) {
+			boolean wonOrLost = callAndValidateForClassic();
+			doUserWin(wonOrLost);
+			
+		}
 		
+	}
+
+	private void doUserWin(boolean wonOrLost) {
+		// TODO Auto-generated method stub
 		
 	}
 	
