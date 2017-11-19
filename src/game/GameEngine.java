@@ -80,5 +80,9 @@ public class GameEngine {
 		
 	}
 	
+	public boolean callLoopForAutomatedBet() {
+		return false;
+	}
+	
 
 }

@@ -49,13 +49,13 @@ class GameEngineTest {
 		verifyInitialQuestionsToPlayer();
 	}
 	
-	void verifyForClassicModeValidationAndPlayingWithClassicMode() {
+	void verifyForModeValidationAndPlayingWithModes() {
 		verifyInitialQuestionsToPlayer();
 		verify(gc).generateWinningNumber();
 		verify(gc).playerWonOrLost(93.33, 80.0);
 	}
 	
-	void returnForClassicModeValidationAndPlayingWithClassicMode() {
+	void returnForValidationAndPlayingWithModes() {
 		returnResultsForValidatedQuestions();
 		when(gc.generateWinningNumber()).thenReturn(93.33);
 		when(gc.playerTargetRange("5", "1")).thenReturn(80.0);
@@ -63,18 +63,18 @@ class GameEngineTest {
 	
 	@Test
 	void shoulCallAndValidateForClassic() {
-		returnForClassicModeValidationAndPlayingWithClassicMode();
+		returnForValidationAndPlayingWithModes();
 		sut.callAndValidateForClassic();
-		verifyForClassicModeValidationAndPlayingWithClassicMode();
+		verifyForModeValidationAndPlayingWithModes();
 	}
 	
 	@Test
 	void shoulPlayWithClassicMode() {
 		when(pl.getScore()).thenReturn(10);
-		returnForClassicModeValidationAndPlayingWithClassicMode();
+		returnForValidationAndPlayingWithModes();
 		sut.playWithClassicMode("4", "4");
 		verify(cv).showClassicModeStartMessage();
-		verifyForClassicModeValidationAndPlayingWithClassicMode();
+		verifyForModeValidationAndPlayingWithModes();
 	}
 	
 	
@@ -93,6 +93,14 @@ class GameEngineTest {
 		when(gc.validateAutomatedBetNumber()).thenReturn("10");
 		sut.callAndValidateForAutomated();
 		verify(gc).validateAutomatedBetNumber();
+		
+	}
+	
+	@Test
+	void shoulCallLoopForAutomatedBet() {
+		sut.callLoopForAutomatedBet();
+		verify(gc).generateWinningNumber();
+		verify(gc).playerWonOrLost(22.22, 55.55);
 		
 	}
 
