@@ -38,5 +38,9 @@ public class GameEngine {
 		
 	}
 	
+	public boolean callAndValidateForClassic() {
+		return false;
+	}
+	
 
 }

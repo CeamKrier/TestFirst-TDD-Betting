@@ -31,5 +31,17 @@ public class GameController {
 		
 	}
 
+	public double generateWinningNumber() {
+		// TODO Auto-generated method stub
+		return 0.0;
+		
+	}
+
+	public boolean playerWonOrLost(double winningNumber, double targetRange) {
+		// TODO Auto-generated method stub
+		return false;
+		
+	}
+
 
 }

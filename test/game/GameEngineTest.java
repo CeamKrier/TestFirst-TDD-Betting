@@ -38,5 +38,20 @@ class GameEngineTest {
 		verify(gc).validateBetTargetSection();
 		verify(gc).playerTargetRange("5", "1");
 	}
+	
+	@Test
+	void shoulCallAndValidateForClassic() {
+		when(gc.validateBetTarget()).thenReturn("5");
+		when(gc.validateBetTargetSection()).thenReturn("1");
+		when(gc.generateWinningNumber()).thenReturn(93.33);
+		when(gc.playerTargetRange("5", "1")).thenReturn(80.0);
+		sut.askGameInitiatingQuestions();
+		verify(gc).validateBetInput();
+		verify(gc).validateBetTarget();
+		verify(gc).validateBetTargetSection();
+		verify(gc).playerTargetRange("5", "1");
+		verify(gc).generateWinningNumber();
+		verify(gc).playerWonOrLost(93.33, 80.0);
+	}
 
 }
