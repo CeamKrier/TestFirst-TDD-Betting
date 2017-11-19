@@ -104,5 +104,14 @@ class GameEngineTest {
 		verify(gc).playerWonOrLost(22.22, 55.55);
 		
 	}
+	
+	@Test
+	void shoulPlayWithAutomatedMode() {
+		when(pl.getScore()).thenReturn(10);
+		returnForValidationAndPlayingWithModes();
+		sut.playWithAutomatedMode("4", "4");
+		verify(cv).showAutomatedModeStartMessage();
+		verifyForModeValidationAndPlayingWithModes();
+	}
 
 }

@@ -85,5 +85,10 @@ public class GameEngine {
 		return controller.playerWonOrLost(winner, targetResult);
 	}
 	
+	public void playWithAutomatedMode(String betMultiply, String bet) {
+		
+		
+	}
+	
 
 }
