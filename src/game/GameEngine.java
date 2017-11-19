@@ -12,8 +12,8 @@ public class GameEngine {
 	private double targetResult;
 	private double winner;
 	
-	public GameEngine(ConsoleView cv, GameController gc) {
-		player = new Player();
+	public GameEngine(ConsoleView cv, GameController gc, Player pl) {
+		player = pl;
 		controller = gc;
 		view = cv;
 	}
@@ -43,6 +43,11 @@ public class GameEngine {
 		askGameInitiatingQuestions();
 		this.winner = controller.generateWinningNumber();
 		return controller.playerWonOrLost(winner, targetResult);
+	}
+	
+	public void playWithClassicMode() {
+		
+		
 	}
 	
 
