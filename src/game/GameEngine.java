@@ -4,12 +4,17 @@ public class GameEngine {
 
 	public Player player;
 	
-	public GameEngine() {
+	public GameEngine(ConsoleView cv, GameController gc) {
 		player = new Player();
 	}
 	
-	public Player getCurrentPlayer() {
-		return player;
+	public GameEngine() {
+		player = new Player();
 	}
+
+	public void run() {
+		
+	}
+	
 
 }
