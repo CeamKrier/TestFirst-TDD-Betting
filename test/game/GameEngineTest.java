@@ -76,5 +76,15 @@ class GameEngineTest {
 		verify(cv).showClassicModeStartMessage();
 		verifyForClassicModeValidationAndPlayingWithClassicMode();
 	}
+	
+	
+	@Test
+	void shoulShowDoUserWin() {
+		sut.doUserWin(false);
+		verify(cv).lostMessage();
+		sut.doUserWin(true);
+		verify(cv).wonMessage();
+		
+	}
 
 }

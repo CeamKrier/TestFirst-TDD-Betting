@@ -55,7 +55,7 @@ public class GameEngine {
 		
 	}
 
-	private void doUserWin(boolean wonOrLost) {
+	public void doUserWin(boolean wonOrLost) {
 		// TODO Auto-generated method stub
 		
 	}
