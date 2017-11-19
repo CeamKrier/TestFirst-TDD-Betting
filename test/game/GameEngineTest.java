@@ -88,4 +88,13 @@ class GameEngineTest {
 		
 	}
 
+	@Test
+	void shoulCallAndValidateForAutomated() {
+		returnForClassicModeValidationAndPlayingWithClassicMode();
+		sut.callAndValidateForAutomated();
+		verifyForClassicModeValidationAndPlayingWithClassicMode();
+		verify(gc).validateAutomatedBetNumber();
+		
+	}
+
 }

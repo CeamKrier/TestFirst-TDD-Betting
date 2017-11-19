@@ -72,5 +72,10 @@ public class GameEngine {
 		
 	}
 	
+	public void callAndValidateForAutomated() {
+		
+		
+	}
+	
 
 }
