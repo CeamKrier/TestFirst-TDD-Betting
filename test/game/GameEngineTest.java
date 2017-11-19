@@ -49,29 +49,32 @@ class GameEngineTest {
 		verifyInitialQuestionsToPlayer();
 	}
 	
-	@Test
-	void shoulCallAndValidateForClassic() {
-		returnResultsForValidatedQuestions();
-		when(gc.generateWinningNumber()).thenReturn(93.33);
-		when(gc.playerTargetRange("5", "1")).thenReturn(80.0);
-		sut.callAndValidateForClassic();
+	void verifyForClassicModeValidationAndPlayingWithClassicMode() {
 		verifyInitialQuestionsToPlayer();
 		verify(gc).generateWinningNumber();
 		verify(gc).playerWonOrLost(93.33, 80.0);
 	}
 	
-	@Test
-	void shoulPlayWithClassicMode() {
-		when(pl.getScore()).thenReturn(10);
+	void returnForClassicModeValidationAndPlayingWithClassicMode() {
 		returnResultsForValidatedQuestions();
 		when(gc.generateWinningNumber()).thenReturn(93.33);
 		when(gc.playerTargetRange("5", "1")).thenReturn(80.0);
+	}
+	
+	@Test
+	void shoulCallAndValidateForClassic() {
+		returnForClassicModeValidationAndPlayingWithClassicMode();
+		sut.callAndValidateForClassic();
+		verifyForClassicModeValidationAndPlayingWithClassicMode();
+	}
+	
+	@Test
+	void shoulPlayWithClassicMode() {
+		when(pl.getScore()).thenReturn(10);
+		returnForClassicModeValidationAndPlayingWithClassicMode();
 		sut.playWithClassicMode();
 		verify(cv).showClassicModeStartMessage();
-		verifyInitialQuestionsToPlayer();
-		verify(gc).generateWinningNumber();
-		verify(gc).playerWonOrLost(93.33, 80.0);
-		
+		verifyForClassicModeValidationAndPlayingWithClassicMode();
 	}
 
 }
