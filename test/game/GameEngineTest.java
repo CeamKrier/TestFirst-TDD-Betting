@@ -7,15 +7,20 @@ import org.junit.jupiter.api.Test;
 
 class GameEngineTest {
 
+	private ConsoleView cv;
+	private GameController gc;
+	private GameEngine sut;
+
 	@BeforeEach
 	void setUp() throws Exception {
+		cv = mock(ConsoleView.class);
+		gc = mock(GameController.class);
+		sut = new GameEngine(cv, gc);
 	}
 
 	@Test
 	void shouldStartTheGame() {
-		ConsoleView cv = mock(ConsoleView.class);
-		GameController gc = mock(GameController.class);
-		GameEngine sut = new GameEngine(cv, gc);
+		
 		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
 		sut.run();
 		verify(cv).showWelcomeMessage();
@@ -25,9 +30,6 @@ class GameEngineTest {
 	
 	@Test
 	void shoulAskGameInitiatingQuestions() {
-		ConsoleView cv = mock(ConsoleView.class);
-		GameController gc = mock(GameController.class);
-		GameEngine sut = new GameEngine(cv, gc);
 		when(gc.validateBetTarget()).thenReturn("5");
 		when(gc.validateBetTargetSection()).thenReturn("1");
 		sut.askGameInitiatingQuestions();
