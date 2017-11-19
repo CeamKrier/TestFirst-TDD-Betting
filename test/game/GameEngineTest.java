@@ -16,10 +16,10 @@ class GameEngineTest {
 		ConsoleView cv = mock(ConsoleView.class);
 		GameController gc = mock(GameController.class);
 		GameEngine sut = new GameEngine(cv, gc);
+		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
 		sut.run();
 		verify(cv).showWelcomeMessage();
 		verify(cv).askUserWhichPlayModeIsWanted();
-		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
 		verify(gc).defineGameMode(1);
 	}
 
