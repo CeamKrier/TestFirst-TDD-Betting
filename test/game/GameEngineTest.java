@@ -90,9 +90,8 @@ class GameEngineTest {
 
 	@Test
 	void shoulCallAndValidateForAutomated() {
-		returnForClassicModeValidationAndPlayingWithClassicMode();
+		when(gc.validateAutomatedBetNumber()).thenReturn("10");
 		sut.callAndValidateForAutomated();
-		verifyForClassicModeValidationAndPlayingWithClassicMode();
 		verify(gc).validateAutomatedBetNumber();
 		
 	}

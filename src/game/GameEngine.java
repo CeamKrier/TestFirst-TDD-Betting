@@ -11,6 +11,7 @@ public class GameEngine {
 	private String targetSection;
 	private double targetResult;
 	private double winner;
+	private int parsedBetNum;
 	
 	public GameEngine(ConsoleView cv, GameController gc, Player pl) {
 		player = pl;
@@ -73,7 +74,9 @@ public class GameEngine {
 	}
 	
 	public void callAndValidateForAutomated() {
-		
+		askGameInitiatingQuestions();
+		String automatedBetNum = controller.validateAutomatedBetNumber();
+		this.parsedBetNum = Integer.parseInt(automatedBetNum);
 		
 	}
 	
