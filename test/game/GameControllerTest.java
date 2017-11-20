@@ -65,5 +65,11 @@ class GameControllerTest {
 		assertEquals(true, (actual > 0));
 	}
 	
+	@Test
+	void shouldReturnDefinedGameModeForClassic() {
+		sut.defineGameMode(1);
+		verify(ge).playWithClassicMode(null, null);
+	}
+	
 
 }

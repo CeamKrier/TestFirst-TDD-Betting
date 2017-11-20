@@ -18,7 +18,12 @@ public class GameController {
 	}
 
 	public void defineGameMode(int choice) {
+		
+	}
+	
+	public String validateAutomatedBetNumber() {
 		// TODO Auto-generated method stub
+		return "";
 		
 	}
 
@@ -65,12 +70,5 @@ public class GameController {
 		}
 	}
 		
-
-	public String validateAutomatedBetNumber() {
-		// TODO Auto-generated method stub
-		return "";
-		
-	}
-
 
 }
