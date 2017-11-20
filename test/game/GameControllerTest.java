@@ -58,5 +58,12 @@ class GameControllerTest {
 		assertEquals(false, actual);
 	}
 	
+	@Test
+	void shouldReturnGeneratedWinningNumberThatIsBetweenZeroAndHundred() {
+		double actual = sut.generateWinningNumber();
+		assertEquals(true, (actual < 100));
+		assertEquals(true, (actual > 0));
+	}
+	
 
 }
