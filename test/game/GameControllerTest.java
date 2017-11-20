@@ -9,31 +9,31 @@ import org.junit.jupiter.api.Test;
 
 class GameControllerTest {
 
+	private GameEngine ge;
+	private ConsoleView cv;
+	private Player pl;
+	private GameController sut;
+
 	@BeforeEach
 	void setUp() throws Exception {
+		ge = mock(GameEngine.class);
+		cv = mock(ConsoleView.class);
+		pl = mock(Player.class);
+		sut = new GameController(ge ,cv, pl);
 	}
 
 	@Test
 	void shouldReturnPlayerTargetRangeLowerSection() {
-		GameEngine ge = mock(GameEngine.class);
-		ConsoleView cv = mock(ConsoleView.class);
-		Player pl = mock(Player.class);
-		GameController sut = new GameController(ge ,cv, pl);
-		
 		double actual = sut.playerTargetRange("5", "2");
 		assertEquals(true, (actual < 50.1));
 	}
 	
 	@Test
 	void shouldReturnPlayerTargetRangeUpperSection() {
-		GameEngine ge = mock(GameEngine.class);
-		ConsoleView cv = mock(ConsoleView.class);
-		Player pl = mock(Player.class);
-		GameController sut = new GameController(ge ,cv, pl);
-		
 		double actual = sut.playerTargetRange("5", "1");
 		assertEquals(true, (actual > 50.1));
 	}
-
+	
+	
 
 }
