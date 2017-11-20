@@ -37,8 +37,14 @@ public class GameController {
 	}
 
 	public double playerTargetRange(String multiply, String upperOrLower) {
-		// TODO Auto-generated method stub
-		return 55.5;
+		int parsedData = Integer.parseInt(multiply);
+		final double divisor = 100.0;
+		double targetRange = divisor / parsedData;
+		if (upperOrLower.equals("1")) {
+			return (divisor - targetRange);
+		} else {
+			return targetRange;
+		}
 		
 	}
 
