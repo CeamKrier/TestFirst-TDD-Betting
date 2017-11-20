@@ -18,7 +18,11 @@ public class GameController {
 	}
 
 	public void defineGameMode(int choice) {
-		
+		if (choice == 1) {
+			engine.playWithClassicMode(engine.betMultiply, engine.bet);
+		} else if (choice == 2) {
+			engine.playWithAutomatedMode(engine.betMultiply, engine.bet, engine.targetResult);
+		}
 	}
 	
 	public String validateAutomatedBetNumber() {
