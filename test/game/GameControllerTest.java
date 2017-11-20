@@ -35,9 +35,27 @@ class GameControllerTest {
 	}
 	
 	@Test
-	void shouldReturnPlayerWonTheBet() {
+	void shouldReturnPlayerWonTheBetInLowerSection() {
 		boolean actual = sut.playerWonOrLost(12.34, 15.0);
 		assertEquals(true, actual);
+	}
+	
+	@Test
+	void shouldReturnPlayerLostTheBetInLowerSection() {
+		boolean actual = sut.playerWonOrLost(12.34, 12.0);
+		assertEquals(false, actual);
+	}
+	
+	@Test
+	void shouldReturnPlayerWonTheBetInUpperSection() {
+		boolean actual = sut.playerWonOrLost(66.66, 60.5);
+		assertEquals(true, actual);
+	}
+	
+	@Test
+	void shouldReturnPlayerLostTheBetInUpperSection() {
+		boolean actual = sut.playerWonOrLost(66.66, 68.5);
+		assertEquals(false, actual);
 	}
 	
 
