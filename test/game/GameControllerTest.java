@@ -71,5 +71,11 @@ class GameControllerTest {
 		verify(ge).playWithClassicMode(null, null);
 	}
 	
+	@Test
+	void shouldReturnDefinedGameModeForAutomated() {
+		sut.defineGameMode(2);
+		verify(ge).playWithAutomatedMode(null, null, 0);
+	}
+	
 
 }
