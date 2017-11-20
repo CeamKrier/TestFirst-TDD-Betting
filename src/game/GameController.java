@@ -1,16 +1,20 @@
 package game;
 
+import java.util.Random;
+
 public class GameController {
 
 	private final String REGEX_ONLY_NUMBERS = "^[1-9][0-9]*$";
 	private GameEngine engine;
 	private ConsoleView view;
 	private Player player;
+	private Random random;
 
 	public GameController(GameEngine ge, ConsoleView cv, Player pl) {
 		this.engine = ge;
 		this.view = cv;
 		this.player = pl;
+		this.random = new Random();
 	}
 
 	public void defineGameMode(int choice) {
@@ -49,8 +53,7 @@ public class GameController {
 	}
 
 	public double generateWinningNumber() {
-		// TODO Auto-generated method stub
-		return 0.0;
+		return random.nextDouble()*100;
 		
 	}
 
