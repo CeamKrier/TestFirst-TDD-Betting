@@ -34,6 +34,11 @@ class GameControllerTest {
 		assertEquals(true, (actual > 50.1));
 	}
 	
+	@Test
+	void shouldReturnPlayerWonTheBet() {
+		boolean actual = sut.playerWonOrLost(12.34, 15.0);
+		assertEquals(true, actual);
+	}
 	
 
 }

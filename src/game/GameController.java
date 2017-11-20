@@ -55,10 +55,9 @@ public class GameController {
 	}
 
 	public boolean playerWonOrLost(double winningNumber, double targetRange) {
-		// TODO Auto-generated method stub
 		return false;
-		
 	}
+		
 
 	public String validateAutomatedBetNumber() {
 		// TODO Auto-generated method stub
