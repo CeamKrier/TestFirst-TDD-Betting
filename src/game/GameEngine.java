@@ -6,10 +6,10 @@ public class GameEngine {
 	private GameController controller;
 	private ConsoleView view;
 	private String gameMode;
-	private String bet;
-	private String betMultiply;
+	public String bet;
+	public String betMultiply;
 	private String targetSection;
-	private double targetResult;
+	public double targetResult;
 	private double winner;
 	private int parsedBetNum;
 	
