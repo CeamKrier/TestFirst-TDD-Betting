@@ -32,7 +32,7 @@ class GameControllerTest {
 		GameController sut = new GameController(ge ,cv, pl);
 		
 		double actual = sut.playerTargetRange("5", "1");
-		assertEquals(true, (actual < 50.1));
+		assertEquals(true, (actual > 50.1));
 	}
 
 
