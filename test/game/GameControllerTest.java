@@ -23,6 +23,17 @@ class GameControllerTest {
 		double actual = sut.playerTargetRange("5", "2");
 		assertEquals(true, (actual < 50.1));
 	}
+	
+	@Test
+	void shouldReturnPlayerTargetRangeUpperSection() {
+		GameEngine ge = mock(GameEngine.class);
+		ConsoleView cv = mock(ConsoleView.class);
+		Player pl = mock(Player.class);
+		GameController sut = new GameController(ge ,cv, pl);
+		
+		double actual = sut.playerTargetRange("5", "1");
+		assertEquals(true, (actual < 50.1));
+	}
 
 
 }
