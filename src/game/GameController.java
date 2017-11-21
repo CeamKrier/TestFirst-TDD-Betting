@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class GameController {
 
-	private final String REGEX_ONLY_NUMBERS = "^[1-9][0-9]*$";
+	public final String REGEX_ONLY_NUMBERS = "^[1-9][0-9]*$";
 	private GameEngine engine;
 	private ConsoleView view;
 	private Player player;

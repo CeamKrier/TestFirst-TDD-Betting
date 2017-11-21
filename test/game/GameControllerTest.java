@@ -77,5 +77,13 @@ class GameControllerTest {
 		verify(ge).playWithAutomatedMode(null, null, 0);
 	}
 	
+	@Test
+	void shouldReturnValidatedBetStringThatIsANumber() {
+		when(cv.askUserBetAmount()).thenReturn("10");
+		when(pl.getScore()).thenReturn(10);
+		String actual = sut.validateBetInput();
+		assertEquals(true, actual.matches(sut.REGEX_ONLY_NUMBERS));
+	}
+	
 
 }
