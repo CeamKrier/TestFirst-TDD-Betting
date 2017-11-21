@@ -50,8 +50,11 @@ public class GameController {
 	}
 
 	public String validateBetTargetSection() {
-		// TODO Auto-generated method stub
-		return "";
+		String targetSection = view.askUserToTargetUpperOrLower();
+		while(!(targetSection.equals("1") || targetSection.equals("2"))) {
+			targetSection = view.askUserToTargetUpperOrLower();
+		}
+		return targetSection;
 		
 	}
 

@@ -109,14 +109,14 @@ class GameControllerTest {
 	@Test
 	void shouldReturnValidatedBetTargetSectionStringThatIsANumberAndUpperSection() {
 		when(cv.askUserToTargetUpperOrLower()).thenReturn("1");
-		String actual = sut.validateBetTarget();
+		String actual = sut.validateBetTargetSection();
 		assertEquals(true, actual.equals("1"));
 	}
 	
 	@Test
 	void shouldReturnValidatedBetTargetSectionStringThatIsANumberAndLowerSection() {
 		when(cv.askUserToTargetUpperOrLower()).thenReturn("2");
-		String actual = sut.validateBetTarget();
+		String actual = sut.validateBetTargetSection();
 		assertEquals(true, actual.equals("2"));
 	}
 
