@@ -26,8 +26,11 @@ public class GameController {
 	}
 	
 	public String validateAutomatedBetNumber() {
-		// TODO Auto-generated method stub
-		return "";
+		String autoBets = view.askUserHowManyTimesToAutomateBetting();
+		while(!autoBets.matches(REGEX_ONLY_NUMBERS)) {
+			autoBets = view.askUserHowManyTimesToAutomateBetting();
+		}
+		return autoBets;
 		
 	}
 
