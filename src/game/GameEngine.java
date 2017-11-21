@@ -52,7 +52,11 @@ public class GameEngine {
 		view.showClassicModeStartMessage();
 		if (player.getScore() > 0) {
 			boolean wonOrLost = callAndValidateForClassic();
-			doUserWin(wonOrLost, this.betMultiply, this.bet);
+			if(bet == null || betMultiply == null) {
+				doUserWin(wonOrLost, this.betMultiply, this.bet);
+			} else {
+				doUserWin(wonOrLost, betMultiply, bet);
+			}
 			
 		}
 		
@@ -92,8 +96,12 @@ public class GameEngine {
 		callAndValidateForAutomated();
 		while (player.getScore() > 0 && parsedBetNum > 0) {
 			parsedBetNum -= 1;
-			boolean wonOrLost = callLoopForAutomatedBet(this.targetResult);
-			doUserWin(wonOrLost, this.betMultiply, this.bet);
+			boolean wonOrLost = callLoopForAutomatedBet(targetResult);
+			if(bet == null || betMultiply == null) {
+				doUserWin(wonOrLost, this.betMultiply, this.bet);
+			} else {
+				doUserWin(wonOrLost, betMultiply, bet);
+			}
 			
 		}
 		
