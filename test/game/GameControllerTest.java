@@ -84,6 +84,26 @@ class GameControllerTest {
 		String actual = sut.validateBetInput();
 		assertEquals(true, actual.matches(sut.REGEX_ONLY_NUMBERS));
 	}
+
+	@Test
+	void shouldReturnValidatedBetTargetStringThatIsANumber() {
+		when(cv.askUserTheBetTarget()).thenReturn("10");
+		String actual = sut.validateBetTarget();
+		assertEquals(true, actual.matches(sut.REGEX_ONLY_NUMBERS));
+	}
 	
+	@Test
+	void shouldReturnValidatedBetTargetStringThatIsANumberAndGreaterThanOne() {
+		when(cv.askUserTheBetTarget()).thenReturn("10");
+		String actual = sut.validateBetTarget();
+		assertEquals(true, Integer.parseInt(actual) > 1);
+	}
+	
+	@Test
+	void shouldReturnValidatedBetTargetStringThatIsANumberAndSmallerThanHundred() {
+		when(cv.askUserTheBetTarget()).thenReturn("10");
+		String actual = sut.validateBetTarget();
+		assertEquals(true, Integer.parseInt(actual) < 100);
+	}
 
 }
