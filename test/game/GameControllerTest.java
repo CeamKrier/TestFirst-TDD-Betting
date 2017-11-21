@@ -105,5 +105,19 @@ class GameControllerTest {
 		String actual = sut.validateBetTarget();
 		assertEquals(true, Integer.parseInt(actual) < 100);
 	}
+	
+	@Test
+	void shouldReturnValidatedBetTargetSectionStringThatIsANumberAndUpperSection() {
+		when(cv.askUserToTargetUpperOrLower()).thenReturn("1");
+		String actual = sut.validateBetTarget();
+		assertEquals(true, actual.equals("1"));
+	}
+	
+	@Test
+	void shouldReturnValidatedBetTargetSectionStringThatIsANumberAndLowerSection() {
+		when(cv.askUserToTargetUpperOrLower()).thenReturn("2");
+		String actual = sut.validateBetTarget();
+		assertEquals(true, actual.equals("2"));
+	}
 
 }
