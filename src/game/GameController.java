@@ -32,8 +32,11 @@ public class GameController {
 	}
 
 	public String validateBetInput() {
-		// TODO Auto-generated method stub
-		return "";
+		String bet = view.askUserBetAmount();
+		while(!bet.matches(REGEX_ONLY_NUMBERS) || (Integer.parseInt(bet)) > player.getScore()) {
+			bet = view.askUserBetAmount();
+		}
+		return bet;
 		
 	}
 
