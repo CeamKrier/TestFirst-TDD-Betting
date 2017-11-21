@@ -41,8 +41,11 @@ public class GameController {
 	}
 
 	public String validateBetTarget() {
-		// TODO Auto-generated method stub
-		return "";
+		String target = view.askUserTheBetTarget();
+		while(!target.matches(REGEX_ONLY_NUMBERS) || !(Integer.parseInt(target)>1 && Integer.parseInt(target)<100)) {
+			target = view.askUserTheBetTarget();
+		}
+		return target;
 		
 	}
 
