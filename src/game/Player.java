@@ -1,16 +1,12 @@
 package game;
 
 public class Player {
-	private int playerScore = 10;
+	int playerScore = 10;
 
 	public int getScore() {
-		return playerScore;
+		return 0;
 		
 	}
 
-	public void setScore(int newScore) {
-		playerScore = newScore;
-		
-	}
 
 }
