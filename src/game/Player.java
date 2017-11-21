@@ -8,10 +8,9 @@ public class Player {
 		
 	}
 
-	public void setScore(int i) {
-		// TODO Auto-generated method stub
+	public void setScore(int newScore) {
+		playerScore = newScore;
 		
 	}
-
 
 }
