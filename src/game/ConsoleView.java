@@ -28,6 +28,7 @@ public class ConsoleView {
 	final String CLASSIC = "\n\n< Classic Betting Mode >";
 	final String AUTOMATED = "\n\n< Automated Betting Mode >";
 	final String AUTO_BET_NUMBER = "\n\nPlease enter how many times you want to automate betting: ";
+	final String ROLL = "\n\nYou have rolled: ";
 	
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
@@ -82,9 +83,9 @@ public class ConsoleView {
 
 	public void rolledNumber(double winner, double targetResult, String targetSection) {
 		if (targetSection.equals("1")) {
-			System.out.print("\n\nYou have rolled: " + String.format("%.2f", winner) + "|| Target: >" + String.format("%.2f", targetResult) + "");
+			System.out.print(ROLL + String.format("%.2f", winner) + "|| Target: >" + String.format("%.2f", targetResult) + "");
 		} else {
-			System.out.print("\n\nYou have rolled: " + String.format("%.2f", winner) + "|| Target: <" + String.format("%.2f", targetResult) + "");
+			System.out.print(ROLL + String.format("%.2f", winner) + "|| Target: <" + String.format("%.2f", targetResult) + "");
 		}
 		
 	}
