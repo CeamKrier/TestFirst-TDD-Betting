@@ -81,7 +81,11 @@ public class ConsoleView {
 	}
 
 	public void rolledNumber(double winner, double targetResult, String targetSection) {
-		
+		if (targetSection.equals("1")) {
+			System.out.print("\n\nYou have rolled: " + String.format("%.2f", winner) + "|| Target: >" + String.format("%.2f", targetResult) + "");
+		} else {
+			System.out.print("\n\nYou have rolled: " + String.format("%.2f", winner) + "|| Target: <" + String.format("%.2f", targetResult) + "");
+		}
 		
 	}
 
