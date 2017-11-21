@@ -18,6 +18,11 @@ class PlayerTest {
 		assertEquals(sut.playerScore, actual);
 	}
 	
-	
+	@Test
+	void shouldSetNewPlayerScore() {
+		Player sut = new Player();
+		sut.setScore(20);
+		assertEquals(20, sut.playerScore);
+	}
 
 }
