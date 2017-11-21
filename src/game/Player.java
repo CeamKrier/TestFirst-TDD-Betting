@@ -1,14 +1,15 @@
 package game;
 
 public class Player {
+	private int playerScore = 10;
 
 	public int getScore() {
-		return 5;
+		return playerScore;
 		
 	}
 
 	public void setScore(int newScore) {
-		// TODO Auto-generated method stub
+		playerScore = newScore;
 		
 	}
 

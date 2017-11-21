@@ -107,5 +107,17 @@ class ConsoleViewTest {
 	    assertNotNull(respond);
 	}
 	
+	@Test
+	void shouldShowRolledNumberThatHasTargetOnUpperSection() {
+		sut.rolledNumber(22.2, 33.3, "1");
+	    assertEquals(true, outContent.toString().contains(">"));
+	}
+	
+	@Test
+	void shouldShowRolledNumberThatHasTargetOnLowerSection() {
+		sut.rolledNumber(92.2, 83.3, "2");
+	    assertEquals(true, outContent.toString().contains("<"));
+	}
+	
 
 }

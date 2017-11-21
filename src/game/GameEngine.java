@@ -21,6 +21,8 @@ public class GameEngine {
 	
 	public GameEngine() {
 		player = new Player();
+		view = new ConsoleView(this);
+		controller = new GameController(this, view, player);
 	}
 
 	public void run() {

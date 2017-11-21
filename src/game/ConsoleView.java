@@ -81,7 +81,7 @@ public class ConsoleView {
 	}
 
 	public void rolledNumber(double winner, double targetResult, String targetSection) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
