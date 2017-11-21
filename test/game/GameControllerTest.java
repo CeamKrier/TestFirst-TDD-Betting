@@ -119,5 +119,13 @@ class GameControllerTest {
 		String actual = sut.validateBetTargetSection();
 		assertEquals(true, actual.equals("2"));
 	}
+	
+	@Test
+	void shouldReturnAutomatedBetStringThatIsNumber() {
+		when(cv.askUserHowManyTimesToAutomateBetting()).thenReturn("3");
+		String actual = sut.validateAutomatedBetNumber();
+		assertEquals(true, actual.matches(sut.REGEX_ONLY_NUMBERS));
+	}
+	
 
 }
