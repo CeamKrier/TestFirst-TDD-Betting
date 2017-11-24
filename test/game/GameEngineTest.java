@@ -115,18 +115,26 @@ class GameEngineTest {
 		verifyForModeValidationAndPlayingWithModes();
 	}
 	
+	void playAgainWithFirstGameMode() {
+		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
+		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
+	}
+	
+	void finishGame() {
+		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("no");
+	}
+	
 	@Test
 	void shouldCallContinueOrFinishGameMethodAndValidateUserWantToPlayAgainWithBalanceGreaterThanOne() {
-		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
 		when(pl.getScore()).thenReturn(1);
-		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
+		playAgainWithFirstGameMode();
 		sut.continueOrFinishGame();
 		verify(gc).validateDoesUserWantToPlayAgain();
 	}
 	
 	@Test
 	void shouldCallContinueOrFinishGameMethodAndValidateUserDoesNotWantToPlayAgainWithBalanceGreaterThanOne() {
-		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("no");
+		finishGame();
 		when(pl.getScore()).thenReturn(1);
 		sut.continueOrFinishGame();
 		verify(gc).validateDoesUserWantToPlayAgain();
@@ -136,9 +144,8 @@ class GameEngineTest {
 	
 	@Test
 	void shouldCallContinueOrFinishGameMethodAndValidateUserWantToPlayAgainWithInsufficentBalance() {
-		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
 		when(pl.getScore()).thenReturn(0);
-		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
+		playAgainWithFirstGameMode();
 		sut.continueOrFinishGame();
 		verify(pl).setScore(10);
 		verify(cv, never()).showGoodbyeMessage();
@@ -147,7 +154,7 @@ class GameEngineTest {
 	
 	@Test
 	void shouldCallContinueOrFinishGameMethodAndValidateUserDoesNotWantToPlayAgainWithInsufficentBalance() {
-		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("no");
+		finishGame();
 		when(pl.getScore()).thenReturn(0);
 		sut.continueOrFinishGame();
 		verify(cv).showGoodbyeMessage();
