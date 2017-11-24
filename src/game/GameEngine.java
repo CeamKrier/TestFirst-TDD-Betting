@@ -114,6 +114,11 @@ public class GameEngine {
 				player.setScore(10);
 			}
 			run();
+		} else {
+			if(player.getScore() > 0) {
+				view.showMoneyWithdrawalMessage();
+			}
+			view.showGoodbyeMessage();
 		}
 	}
 	
