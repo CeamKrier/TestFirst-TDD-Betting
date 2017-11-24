@@ -108,8 +108,13 @@ public class GameEngine {
 	}
 
 	public void continueOrFinishGame() {
-		// TODO Auto-generated method stub
-		
+		String respond = controller.validateDoesUserWantToPlayAgain();
+		if(respond.equals("yes")) {
+			if(player.getScore() < 1) {
+				player.setScore(10);
+			}
+			run();
+		}
 	}
 	
 
