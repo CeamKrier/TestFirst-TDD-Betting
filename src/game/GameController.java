@@ -85,6 +85,11 @@ public class GameController {
 			return winningNumber < targetRange;
 		}
 	}
+
+	public String validateDoesUserWantToPlayAgain() {
+		// TODO Auto-generated method stub
+		return "";
+	}
 		
 
 }

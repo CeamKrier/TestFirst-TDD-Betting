@@ -114,5 +114,14 @@ class GameEngineTest {
 		verify(cv).showAutomatedModeStartMessage();
 		verifyForModeValidationAndPlayingWithModes();
 	}
+	
+	@Test
+	void shouldCallContinueOrFinishGameMethodAndValidateUserWantToPlayAgainWithBalanceGreaterThanOne() {
+		when(pl.getScore()).thenReturn(1);
+		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
+		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
+		sut.continueOrFinishGame();
+		verify(gc).validateDoesUserWantToPlayAgain();
+	}
 
 }

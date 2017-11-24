@@ -106,6 +106,11 @@ public class GameEngine {
 		}
 		
 	}
+
+	public void continueOrFinishGame() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }
