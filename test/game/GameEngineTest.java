@@ -117,10 +117,40 @@ class GameEngineTest {
 	
 	@Test
 	void shouldCallContinueOrFinishGameMethodAndValidateUserWantToPlayAgainWithBalanceGreaterThanOne() {
+		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
 		when(pl.getScore()).thenReturn(1);
 		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
-		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
 		sut.continueOrFinishGame();
+		verify(gc).validateDoesUserWantToPlayAgain();
+	}
+	
+	@Test
+	void shouldCallContinueOrFinishGameMethodAndValidateUserDoesNotWantToPlayAgainWithBalanceGreaterThanOne() {
+		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("no");
+		when(pl.getScore()).thenReturn(1);
+		sut.continueOrFinishGame();
+		verify(gc).validateDoesUserWantToPlayAgain();
+		verify(cv).showMoneyWithdrawalMessage();
+		verify(cv).showGoodbyeMessage();
+	}
+	
+	@Test
+	void shouldCallContinueOrFinishGameMethodAndValidateUserWantToPlayAgainWithInsufficentBalance() {
+		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
+		when(pl.getScore()).thenReturn(0);
+		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
+		sut.continueOrFinishGame();
+		verify(pl).setScore(10);
+		verify(cv, never()).showGoodbyeMessage();
+		verify(gc).validateDoesUserWantToPlayAgain();
+	}
+	
+	@Test
+	void shouldCallContinueOrFinishGameMethodAndValidateUserDoesNotWantToPlayAgainWithInsufficentBalance() {
+		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("no");
+		when(pl.getScore()).thenReturn(0);
+		sut.continueOrFinishGame();
+		verify(cv).showGoodbyeMessage();
 		verify(gc).validateDoesUserWantToPlayAgain();
 	}
 

@@ -90,4 +90,14 @@ public class ConsoleView {
 		
 	}
 
+	public void showMoneyWithdrawalMessage() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void showGoodbyeMessage() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
