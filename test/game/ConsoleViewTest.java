@@ -131,5 +131,12 @@ class ConsoleViewTest {
 		String expected = sut.GOODBYE;
 		assertEquals(expected, outContent.toString());
 	}
+	
+	@Test
+	void shouldAskDoesUserWantsToPlayAgain() {
+		sut.askUserDoesUserWantsToPlayAgain();
+		String expected = sut.PLAY_AGAIN;
+		assertEquals(expected, outContent.toString());
+	}
 
 }

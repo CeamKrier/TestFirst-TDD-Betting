@@ -30,6 +30,7 @@ public class ConsoleView {
 	final String AUTO_BET_NUMBER = "\n\nPlease enter how many times you want to automate betting: ";
 	final String ROLL = "\n\nYou have rolled: ";
 	final String GOODBYE = "\n\nThanks for choosing us! Hoping to see you soon again.";
+	final String PLAY_AGAIN = "\n\nDo you want to play again? (yes / no)";
 	
 	
 	public void showWelcomeMessage() {
