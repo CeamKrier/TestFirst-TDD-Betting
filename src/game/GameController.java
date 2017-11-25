@@ -87,8 +87,14 @@ public class GameController {
 	}
 
 	public String validateDoesUserWantToPlayAgain() {
-		// TODO Auto-generated method stub
-		return "";
+		if(player.getScore() < 1) {
+			view.showRefuelBalanceMessage();
+		}
+		String respond = view.askUserDoesUserWantsToPlayAgain();
+		while(!(respond.toLowerCase().equals("yes") || respond.toLowerCase().equals("no"))) {
+			respond = view.askUserDoesUserWantsToPlayAgain();
+		}
+		return respond;
 	}
 		
 

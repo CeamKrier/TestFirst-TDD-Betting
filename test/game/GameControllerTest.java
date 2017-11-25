@@ -137,6 +137,7 @@ class GameControllerTest {
 	@Test
 	void shouldShowRefuelBalanceMessageIfCurrentBalanceIsNotSufficient() {
 		when(pl.getScore()).thenReturn(0);
+		when(cv.askUserDoesUserWantsToPlayAgain()).thenReturn("yes");
 		sut.validateDoesUserWantToPlayAgain();
 		verify(cv).showRefuelBalanceMessage();
 	}
