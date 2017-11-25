@@ -127,5 +127,19 @@ class GameControllerTest {
 		assertEquals(true, actual.matches(sut.REGEX_ONLY_NUMBERS));
 	}
 	
+	@Test
+	void shouldReturnUserRespondAboutReplayGame() {
+		when(cv.askUserDoesUserWantsToPlayAgain()).thenReturn("yes");
+		String actual = sut.validateDoesUserWantToPlayAgain();
+		assertEquals(true, actual.equals("yes"));
+	}
+	
+	@Test
+	void shouldShowRefuelBalanceMessageIfCurrentBalanceIsNotSufficient() {
+		when(pl.getScore()).thenReturn(0);
+		sut.validateDoesUserWantToPlayAgain();
+		verify(cv).showRefuelBalanceMessage();
+	}
+	
 
 }

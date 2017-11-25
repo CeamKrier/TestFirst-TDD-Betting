@@ -100,4 +100,14 @@ public class ConsoleView {
 		
 	}
 
+	public String askUserDoesUserWantsToPlayAgain() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void showRefuelBalanceMessage() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
