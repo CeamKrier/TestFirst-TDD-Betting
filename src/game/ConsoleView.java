@@ -92,7 +92,7 @@ public class ConsoleView {
 	}
 
 	public void showMoneyWithdrawalMessage() {
-		//TODO Auto-generated method stub
+		System.out.print("\n\nYou have won " + engine.player.getScore() + " coins! You can cash them in the casino whenever you want.");
 	}
 
 	public void showGoodbyeMessage() {
