@@ -134,7 +134,7 @@ class ConsoleViewTest {
 	
 	@Test
 	void shouldAskDoesUserWantsToPlayAgain() {
-		sut.askUserDoesUserWantsToPlayAgain();
+		sut.askDoesUserWantsToPlayAgain();
 		String expected = sut.PLAY_AGAIN;
 		assertEquals(expected, outContent.toString());
 	}

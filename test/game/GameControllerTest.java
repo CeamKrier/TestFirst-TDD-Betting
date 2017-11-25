@@ -129,7 +129,7 @@ class GameControllerTest {
 	
 	@Test
 	void shouldReturnUserRespondAboutReplayGame() {
-		when(cv.askUserDoesUserWantsToPlayAgain()).thenReturn("yes");
+		when(cv.askDoesUserWantsToPlayAgain()).thenReturn("yes");
 		String actual = sut.validateDoesUserWantToPlayAgain();
 		assertEquals(true, actual.equals("yes"));
 	}
@@ -137,7 +137,7 @@ class GameControllerTest {
 	@Test
 	void shouldShowRefuelBalanceMessageIfCurrentBalanceIsNotSufficient() {
 		when(pl.getScore()).thenReturn(0);
-		when(cv.askUserDoesUserWantsToPlayAgain()).thenReturn("yes");
+		when(cv.askDoesUserWantsToPlayAgain()).thenReturn("yes");
 		sut.validateDoesUserWantToPlayAgain();
 		verify(cv).showRefuelBalanceMessage();
 	}

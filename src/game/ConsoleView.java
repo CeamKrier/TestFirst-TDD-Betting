@@ -102,7 +102,7 @@ public class ConsoleView {
 		
 	}
 
-	public String askUserDoesUserWantsToPlayAgain() {
+	public String askDoesUserWantsToPlayAgain() {
 		System.out.print(PLAY_AGAIN);
 		return sc.nextLine();
 	}

@@ -90,9 +90,9 @@ public class GameController {
 		if(player.getScore() < 1) {
 			view.showRefuelBalanceMessage();
 		}
-		String respond = view.askUserDoesUserWantsToPlayAgain();
+		String respond = view.askDoesUserWantsToPlayAgain();
 		while(!(respond.toLowerCase().equals("yes") || respond.toLowerCase().equals("no"))) {
-			respond = view.askUserDoesUserWantsToPlayAgain();
+			respond = view.askDoesUserWantsToPlayAgain();
 		}
 		return respond;
 	}
