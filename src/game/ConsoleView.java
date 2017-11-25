@@ -97,7 +97,7 @@ public class ConsoleView {
 	}
 
 	public void showGoodbyeMessage() {
-		// TODO Auto-generated method stub
+		System.out.print(GOODBYE);
 		
 	}
 
