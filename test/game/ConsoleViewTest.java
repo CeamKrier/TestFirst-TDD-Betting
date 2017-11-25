@@ -125,5 +125,11 @@ class ConsoleViewTest {
 		assertEquals(true, outContent.toString().contains("won"));
 	}
 	
+	@Test
+	void shouldShowGoodbyeMessage() {
+		sut.showGoodbyeMessage();
+		String expected = sut.GOODBYE;
+		assertEquals(expected, outContent.toString());
+	}
 
 }
