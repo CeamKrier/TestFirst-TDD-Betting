@@ -109,7 +109,7 @@ public class ConsoleView {
 	}
 
 	public void showRefuelBalanceMessage() {
-		// TODO Auto-generated method stub
+		System.out.print(REFUEL);
 		
 	}
 
