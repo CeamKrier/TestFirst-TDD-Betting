@@ -30,6 +30,7 @@ public class ConsoleView {
 	final String AUTO_BET_NUMBER = "\n\nPlease enter how many times you want to automate betting: ";
 	final String ROLL = "\n\nYou have rolled: ";
 	
+	
 	public void showWelcomeMessage() {
 		System.out.print(WELCOME);
 	}
@@ -91,8 +92,7 @@ public class ConsoleView {
 	}
 
 	public void showMoneyWithdrawalMessage() {
-		// TODO Auto-generated method stub
-		
+		//TODO Auto-generated method stub
 	}
 
 	public void showGoodbyeMessage() {

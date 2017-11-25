@@ -119,5 +119,11 @@ class ConsoleViewTest {
 	    assertEquals(true, outContent.toString().contains("<"));
 	}
 	
+	@Test
+	void shouldShowMoneyWithdrawalMessage() {
+		sut.showMoneyWithdrawalMessage();;
+		assertEquals(true, outContent.toString().contains("won"));
+	}
+	
 
 }
