@@ -31,6 +31,7 @@ public class ConsoleView {
 	final String ROLL = "\n\nYou have rolled: ";
 	final String GOODBYE = "\n\nThanks for choosing us! Hoping to see you soon again.";
 	final String PLAY_AGAIN = "\n\nDo you want to play again? (yes / no)";
+	final String REFUEL = "\n\nSeems like you lost all your balance but no worries! We will present you 10 coins again if you would like to play!";
 	
 	
 	public void showWelcomeMessage() {

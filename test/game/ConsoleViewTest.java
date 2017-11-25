@@ -138,5 +138,12 @@ class ConsoleViewTest {
 		String expected = sut.PLAY_AGAIN;
 		assertEquals(expected, outContent.toString());
 	}
+	
+	@Test
+	void shouldShowRefuelBalanceMessage() {
+		sut.showRefuelBalanceMessage();
+		String expected = sut.REFUEL;
+		assertEquals(expected, outContent.toString());
+	}
 
 }
