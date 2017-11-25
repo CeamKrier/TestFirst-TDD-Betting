@@ -59,6 +59,7 @@ public class GameEngine {
 			}
 			
 		}
+		continueOrFinishGame();
 		
 	}
 
@@ -104,6 +105,7 @@ public class GameEngine {
 			}
 			
 		}
+		continueOrFinishGame();
 		
 	}
 

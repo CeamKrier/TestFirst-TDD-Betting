@@ -71,6 +71,7 @@ class GameEngineTest {
 	@Test
 	void shoulPlayWithClassicMode() {
 		when(pl.getScore()).thenReturn(10);
+		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
 		returnForValidationAndPlayingWithModes();
 		sut.playWithClassicMode("4", "4");
 		verify(cv).showClassicModeStartMessage();
