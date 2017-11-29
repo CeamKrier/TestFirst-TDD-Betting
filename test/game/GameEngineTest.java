@@ -72,7 +72,6 @@ class GameEngineTest {
 	void shoulPlayWithClassicMode() {
 		when(pl.getScore()).thenReturn(10);
 		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
-		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
 		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
 		returnForValidationAndPlayingWithModes();
 		sut.playWithClassicMode("4", "4");
@@ -112,8 +111,7 @@ class GameEngineTest {
 	void shoulPlayWithAutomatedMode() {
 		when(pl.getScore()).thenReturn(10);
 		when(gc.validateAutomatedBetNumber()).thenReturn("1");
-		when(gc.validateDoesUserWantToPlayAgain()).thenReturn("yes");
-		when(cv.askUserWhichPlayModeIsWanted()).thenReturn("1");
+		playAgainWithFirstGameMode();
 		returnForValidationAndPlayingWithModes();
 		sut.playWithAutomatedMode("4", "4", 80.0);
 		verify(cv).showAutomatedModeStartMessage();

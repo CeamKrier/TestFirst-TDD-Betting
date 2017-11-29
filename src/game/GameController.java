@@ -79,7 +79,7 @@ public class GameController {
 	}
 
 	public boolean playerWonOrLost(double winningNumber, double targetRange) {
-		if (targetRange > 50.1) {
+		if (targetRange > 50.0) {
 			return winningNumber > targetRange;
 		} else {
 			return winningNumber < targetRange;
